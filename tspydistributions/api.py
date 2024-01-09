@@ -322,7 +322,7 @@ class Distribution():
     # alias for random to conform with scipy.stats
     def rvs(self, n:int = 1, mu: Optional[Vector] = None, sigma: Optional[Vector] = None, skew: Optional[Vector] = None, shape: Optional[Vector] = None, lamda: Optional[Vector] = None, seed: Optional[int] = None) -> Array:
         """
-        Alias method for quantile function
+        Alias method for random function
         """
         return self.random(n = n, mu = mu, sigma = sigma, skew = skew, shape = shape, lamda = lamda, seed = seed)
 

@@ -1,4 +1,4 @@
-name: Upload Python Package to TestPyPI
+name: Upload Python Package to PyPI
 
 on:
   push:
@@ -18,7 +18,7 @@ jobs:
         curl -sSL https://install.python-poetry.org | python3 -
     - name: Build package
       run: poetry build
-    - name: Upload to TestPyPI
-      run: poetry publish -r testpypi
+    - name: Upload to PyPI
+      run: poetry publish
       env:
-        POETRY_PYPI_TOKEN_TESTPYPI: ${{ secrets.TEST_PYPI_API_TOKEN }}
+        POETRY_PYPI_TOKEN_TESTPYPI: ${{ secrets.PYPI_API_TOKEN }}
