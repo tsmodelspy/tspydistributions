@@ -95,6 +95,9 @@ fonttools==4.46.0 ; python_version >= "3.10" and python_version < "3.13" \
 fsspec==2023.12.2 ; python_version >= "3.10" and python_version < "3.13" \
     --hash=sha256:8548d39e8810b59c38014934f6b31e57f40c1b20f911f4cc2b85389c7e9bf0cb \
     --hash=sha256:d800d87f72189a745fa3d6b033b9dc4a34ad069f60ca60b943a63599f5501960
+jaxtyping==0.2.25 ; python_version >= "3.10" and python_version < "3.13" \
+    --hash=sha256:4ec4bdb6839a67c062e48c27d62d44bf353099d7ff6cd3628b5a511c097ab922 \
+    --hash=sha256:503772cf985ff50bd160d0661266e1628da47cc8b9a302de16f230e07f5ac119
 jinja2==3.1.2 ; python_version >= "3.10" and python_version < "3.13" \
     --hash=sha256:31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852 \
     --hash=sha256:6088930bfe239f0e6710546ab9c19c9ef35e29792895fed6e6e31a023a182a61
@@ -573,6 +576,9 @@ triton==2.1.0 ; platform_system == "Linux" and platform_machine == "x86_64" and 
     --hash=sha256:82fc5aeeedf6e36be4e4530cbdcba81a09d65c18e02f52dc298696d45721f3bd \
     --hash=sha256:919b06453f0033ea52c13eaf7833de0e57db3178d23d4e04f9fc71c4f2c32bf8 \
     --hash=sha256:ae4bb8a91de790e1866405211c4d618379781188f40d5c4c399766914e84cd94
+typeguard==2.13.3 ; python_version >= "3.10" and python_version < "3.13" \
+    --hash=sha256:00edaa8da3a133674796cf5ea87d9f4b4c367d77476e185e80251cc13dfbb8c4 \
+    --hash=sha256:5e3e3be01e887e7eafae5af63d1f36c849aaa94e3a0112097312aabfa16284f1
 typing-extensions==4.9.0 ; python_version >= "3.10" and python_version < "3.13" \
     --hash=sha256:23478f88c37f27d76ac8aee6c905017a143b0b1b886c3c9f66bc2fd94f9f5783 \
     --hash=sha256:af72aea155e91adfc61c3ae9e0e342dbc0cba726d6cba4b6c72c1f34e47291cd

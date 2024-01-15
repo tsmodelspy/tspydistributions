@@ -6,6 +6,7 @@
    introduction
    locscale
    pdqr
+   density
    api
    auto_examples/index
 

@@ -65,6 +65,23 @@ tspydistributions gallery
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Demo: Linear Model with Johnson&#x27;s SU-distribution">
+
+.. only:: html
+
+  .. image:: /auto_examples/images/thumb/sphx_glr_plot_model_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_plot_model.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Demo: Linear Model with Johnson's SU-distribution</div>
+    </div>
+
+
+.. raw:: html
+
     </div>
 
 
@@ -74,6 +91,7 @@ tspydistributions gallery
    /auto_examples/plot_ghst
    /auto_examples/plot_profile
    /auto_examples/plot_estimated
+   /auto_examples/plot_model
 
 
 .. only:: html

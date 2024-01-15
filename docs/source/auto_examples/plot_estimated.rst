@@ -52,24 +52,24 @@ Demo: API
 
     Distribution: sgh
     ======================================================
-     No. Observations:   2000   Log Likelihood:  -2613.12
-     No. Parameters:        4   AIC:              5234.24
-     Skewness:           1.34   BIC:              5256.64
-     Kurtosis:           6.51                            
+     No. Observations:   2000   Log Likelihood:  -2597.66
+     No. Parameters:        4   AIC:              5203.33
+     Skewness:           1.23   BIC:              5225.73
+     Kurtosis:           5.75                            
      Covariance:            H                            
     +-------+----------+------------+---------+----------+
     |       | Estimate | Std. Error | t value | Pr(>|t|) |
     +-------+----------+------------+---------+----------+
-    | mu    | -0.03    | 0.00       | -11.73  | 0.00     |
-    | sigma | 1.00     | 0.00       | 321.38  | 0.00     |
-    | skew  | 0.73     | 0.01       | 132.93  | 0.00     |
-    | shape | 2.67     | 0.27       | 10.05   | 0.00     |
+    | mu    | -0.05    | 0.00       | -16.01  | 0.00     |
+    | sigma | 0.98     | 0.00       | 360.57  | 0.00     |
+    | skew  | 0.83     | 0.01       | 113.92  | 0.00     |
+    | shape | 4.07     | 0.54       | 7.52    | 0.00     |
     | lamda | -0.50    | nan        | nan     | nan      |
     +-------+----------+------------+---------+----------+
 
 
-    Value at Risk (5%): -1.2921
-    Expected Tail Loss (5%): -1.523
+    Value at Risk (5%): -1.2989
+    Expected Tail Loss (5%): -1.4975
 
 
 
@@ -104,7 +104,7 @@ Demo: API
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 12.724 seconds)
+   **Total running time of the script:** (0 minutes 10.678 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_estimated.py:
