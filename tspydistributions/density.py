@@ -191,7 +191,7 @@ def dsged(parameters:Tensor, x:Tensor, log:bool = False)->Tensor:
     g = 2.0/(parameters[2] + 1.0/parameters[2])
     new_pars = torch.cat([torch.tensor([0., 1.]), parameters[3].unsqueeze(0)])
     ged_log_lik = dged(parameters = new_pars, x = z/xi, log = True)
-    pdf = torch.log(g) + (torch.tensor(-1.0) * ged_log_lik) + torch.log(fs_sigma)
+    pdf = torch.log(g) + (ged_log_lik) + torch.log(fs_sigma)
     pdf = pdf - torch.log(parameters[1])
     if log:
         return pdf
@@ -221,7 +221,7 @@ def dsstd(parameters:Tensor, x:Tensor, log:bool = False)->Tensor:
     g = 2.0/(parameters[2] + 1.0/parameters[2])
     new_pars = torch.cat([torch.tensor([0., 1.]), parameters[3].unsqueeze(0)])
     std_log_lik = dstd(parameters = new_pars, x = z/xi, log = True)
-    pdf = torch.log(g) + (torch.tensor(-1.0) * std_log_lik) + torch.log(fs_sigma)
+    pdf = torch.log(g) + (std_log_lik) + torch.log(fs_sigma)
     pdf = pdf - torch.log(parameters[1])
     if log:
         return pdf

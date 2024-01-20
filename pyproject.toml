@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "tspydistributions"
-version = "0.1.1"
+version = "0.1.2"
 description = "Location Scale Family Statistical Distributions"
 authors = ["Alexios Galanos <alexios@4dscape.com>"]
 license = "MIT"
@@ -24,6 +24,8 @@ jaxtyping = "^0.2.25"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.4.2"
+numpy = "^1.26.3"
+torch = "^2.1.2"
 
 [tool.poetry.group.docs]
 optional = true
