@@ -5,7 +5,6 @@ from typing import List, Dict, Literal, Any, Optional, TYPE_CHECKING, TypeVar, C
 import numpy.typing as npt
 from scipy.optimize import minimize, Bounds
 from scipy.special import kve
-import numdifftools as nd
 from tspydistributions.numderiv import get_hessian, get_jacobian
 
 Array = npt.NDArray[np.float64]

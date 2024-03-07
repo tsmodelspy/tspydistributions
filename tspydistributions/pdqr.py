@@ -1014,7 +1014,7 @@ def pgh(q: Vector, params: Vector) -> Array:
     return p
 
     
-def dsgh(x: Vector, mu: Vector = 0, sigma: Vector = 1, skew: Vector = 2, shape: Vector = 4, lamda: Vector = 0, log: bool = False) -> Array:
+def dsgh(x: Vector, mu: Vector = 0, sigma: Vector = 1, skew: Vector = 0.5, shape: Vector = 4, lamda: Vector = 0, log: bool = False) -> Array:
     """
     (Standardized Generalized Hyperbolic) Probability Density Function (dsgh)
 
@@ -1050,7 +1050,7 @@ def dsgh(x: Vector, mu: Vector = 0, sigma: Vector = 1, skew: Vector = 2, shape: 
         pdf = np.log(pdf)
     return np.atleast_1d(pdf)
 
-def psgh(q: Vector, mu: Vector = 0, sigma: Vector = 1, skew: Vector = 2, shape: Vector = 4, lamda: Vector = 0, lower_tail: bool = True) -> Array:
+def psgh(q: Vector, mu: Vector = 0, sigma: Vector = 1, skew: Vector = 0.5, shape: Vector = 4, lamda: Vector = 0, lower_tail: bool = True) -> Array:
     """
     (Standardized Generalized Hyperbolic) Cumulative Probability Function (psgh)
 
@@ -1086,7 +1086,7 @@ def psgh(q: Vector, mu: Vector = 0, sigma: Vector = 1, skew: Vector = 2, shape: 
         p = 1.0 - p
     return np.atleast_1d(p)
 
-def qsgh(p: Vector, mu: Vector = 0, sigma: Vector = 1, skew: Vector = 2, shape: Vector = 4, lamda: Vector = 0, lower_tail: bool = True) -> Array:
+def qsgh(p: Vector, mu: Vector = 0, sigma: Vector = 1, skew: Vector = 0.5, shape: Vector = 4, lamda: Vector = 0, lower_tail: bool = True) -> Array:
     """
     (Standardized Generalized Hyperbolic) Quantile Function (qsgh)
 
@@ -1123,7 +1123,7 @@ def qsgh(p: Vector, mu: Vector = 0, sigma: Vector = 1, skew: Vector = 2, shape: 
     q = parameters[0] + q * parameters[1]
     return np.atleast_1d(q)
 
-def rsgh(n: int = 1, mu: float = 0, sigma: float = 1, skew: float = 2, shape: float = 4, lamda: float = 0, seed: Optional[int] = None) -> Array:
+def rsgh(n: int = 1, mu: float = 0, sigma: float = 1, skew: float = 0.5, shape: float = 4, lamda: float = 0, seed: Optional[int] = None) -> Array:
     """
     (Standardized Generalized Hyperbolic) Random Number Function (rsgh)
 

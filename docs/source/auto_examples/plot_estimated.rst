@@ -47,29 +47,29 @@ Demo: API
 
  .. code-block:: none
 
-    /Users/alexios/github/tsmodelspy/tspydistributions/tspydistributions/estimation.py:15: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+    /Users/alexios/github/tsmodelspy/tspydistributions/tspydistributions/estimation.py:14: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
 
 
     Distribution: sgh
     ======================================================
-     No. Observations:   2000   Log Likelihood:  -2587.14
-     No. Parameters:        4   AIC:              5182.29
-     Skewness:           1.15   BIC:              5204.69
-     Kurtosis:           5.34                            
+     No. Observations:   2000   Log Likelihood:  -2671.06
+     No. Parameters:        4   AIC:              5350.13
+     Skewness:           1.25   BIC:              5372.53
+     Kurtosis:           5.93                            
      Covariance:            H                            
     +-------+----------+------------+---------+----------+
     |       | Estimate | Std. Error | t value | Pr(>|t|) |
     +-------+----------+------------+---------+----------+
-    | mu    | -0.02    | 0.00       | -6.78   | 0.00     |
-    | sigma | 0.97     | 0.00       | 382.54  | 0.00     |
-    | skew  | 0.88     | 0.01       | 100.89  | 0.00     |
-    | shape | 5.29     | 0.87       | 6.10    | 0.00     |
+    | mu    | 0.03     | 0.00       | 10.07   | 0.00     |
+    | sigma | 1.02     | 0.00       | 338.43  | 0.00     |
+    | skew  | 0.78     | 0.01       | 122.43  | 0.00     |
+    | shape | 3.51     | 0.46       | 7.67    | 0.00     |
     | lamda | -0.50    | nan        | nan     | nan      |
     +-------+----------+------------+---------+----------+
 
 
-    Value at Risk (5%): -1.2722
-    Expected Tail Loss (5%): -1.4602
+    Value at Risk (5%): -1.2688
+    Expected Tail Loss (5%): -1.4882
 
 
 
@@ -104,7 +104,7 @@ Demo: API
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 9.791 seconds)
+   **Total running time of the script:** (0 minutes 10.191 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_estimated.py:

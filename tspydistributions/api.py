@@ -4,7 +4,7 @@ from tspydistributions.helpers import _distribution_bounds, _distribution_par_na
 import tspydistributions.pdqr as pdqr
 from tspydistributions.estimation import estimate_distribution
 from tspydistributions.sandwich import vcov
-from tspydistributions.profile import profile_distribution
+from tspydistributions.profiling import profile_distribution
 from tspydistributions.plot import pdfplot, qqplot, qqline
 from typing import ClassVar, List, Dict, Literal, Any, Optional, TYPE_CHECKING, TypeVar, Callable
 from tabulate import tabulate
@@ -410,7 +410,7 @@ class Distribution():
         return self.estimate(x = x, fixed = fixed, method = method, tol = tol, options = options, type = type)
     
 
-    def profile(self, sim:int = 100, size:list = [100, 200, 400, 800, 1000, 1500, 2000, 4000], num_workers:Optional[int] = None) -> 'ProfiledDistribution':
+    def profile(self, sim:int = 100, size:list = [100, 200, 400, 800, 1000, 1500, 2000, 4000], method = 'Nelder-Mead', num_workers:Optional[int] = None) -> 'ProfiledDistribution':
         """
         Profile Distribution
 
@@ -424,7 +424,7 @@ class Distribution():
         :param num_workers: the number of workers to use for parallel processing
         :rtype: an object of class ProfileDistribution
         """
-        results, rmse =  profile_distribution(self.name, mu = self.mu, sigma = self.sigma, skew = self.skew, shape = self.shape, lamda = self.lamda, sim = sim, size = size, num_workers = num_workers)
+        results, rmse =  profile_distribution(self.name, mu = self.mu, sigma = self.sigma, skew = self.skew, shape = self.shape, lamda = self.lamda, sim = sim, size = size, method = method, num_workers = num_workers)
         profiled_distribution = ProfiledDistribution(
             name=self.name, 
             mu=self.mu,

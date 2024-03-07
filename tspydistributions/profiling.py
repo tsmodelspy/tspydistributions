@@ -13,9 +13,13 @@ Array = npt.NDArray[np.float64]
 Vector = npt.ArrayLike
 
 def worker_function(args):
-    dist_name, mu, sigma, skew, shape, lamda, n = args
+    method, dist_name, mu, sigma, skew, shape, lamda, n = args
     x = _random_generator(n, dist_name, mu, sigma, skew, shape, lamda)
-    mod = estimate_distribution(dist_name, x)
+    if dist_name in ('sghst', 'sgh'):
+        type = 'FD'
+    else:
+        type = 'AD'
+    mod = estimate_distribution(dist_name, x, type = type, method = method)
     return mod['parameters'].tolist()
 
 def _random_generator(n = 100, dist_name:str = 'norm', mu:float = 0, sigma:float = 1, skew:float = 0, shape:float = 5, lamda:float = -0.5):
@@ -36,7 +40,7 @@ def _random_generator(n = 100, dist_name:str = 'norm', mu:float = 0, sigma:float
         case "jsu":
             x = pdqr.rjsu(n, mu, sigma, skew, shape)
         case "sgh":
-            x = pdqr.rsgh(n, mu, sigma, shape, lamda)
+            x = pdqr.rsgh(n, mu, sigma, skew, shape, lamda)
         case "sghst":
             x = pdqr.rsghst(n, mu, sigma, skew, shape)
         case _:
@@ -47,7 +51,7 @@ def _random_generator(n = 100, dist_name:str = 'norm', mu:float = 0, sigma:float
 def rmse(predictions, targets):
     return np.sqrt(np.mean((predictions-targets)**2))
 
-def profile_distribution(dist_name:str = 'norm', mu:float = 0, sigma:float = 1, skew:float = 0, shape:float = 5, lamda:float = -0.5, sim:int  = 100, size = [100, 200, 400, 800, 1000, 1500, 2000, 4000], num_workers:Optional[int] = None)->Tuple[Dict[int, np.ndarray], Dict[int, np.ndarray]]:
+def profile_distribution(dist_name:str = 'norm', mu:float = 0, sigma:float = 1, skew:float = 0, shape:float = 5, lamda:float = -0.5, sim:int  = 100, size = [100, 200, 400, 800, 1000, 1500, 2000, 4000], method = 'Nelder-Mead', num_workers:Optional[int] = None)->Tuple[Dict[int, np.ndarray], Dict[int, np.ndarray]]:
     if _validate_distribution(dist_name) == False:
         raise ValueError("not a valid distribution")
     bounds = _distribution_bounds(dist_name)
@@ -60,7 +64,7 @@ def profile_distribution(dist_name:str = 'norm', mu:float = 0, sigma:float = 1, 
     with Pool(processes=num_workers) as pool:
         for size_idx, n in enumerate(size):
             # Prepare arguments for each simulation
-            args_list = [(dist_name, mu, sigma, skew, shape, lamda, n) for _ in range(sim)]            
+            args_list = [(method, dist_name, mu, sigma, skew, shape, lamda, n) for _ in range(sim)]            
             # Perform parallel computation
             parallel_results = pool.map(worker_function, args_list)
             # Store the results
